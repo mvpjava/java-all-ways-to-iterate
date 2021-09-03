@@ -9,7 +9,7 @@ public class ForLoopClassic {
     private static final List<String> famousCars;
 
     static  {
-        famousCars = of("Batmobile", "James Bond 1964 Aston Martin DB5", "" +
+        famousCars = of("Batmobile", "James Bond 1964 Aston Martin DB5" +
                         "DeLorean DMC-12 Time Machine", "1968 Ford Mustang Fastback", "1977 Pontiac Firebird Trans AM");
     }
 

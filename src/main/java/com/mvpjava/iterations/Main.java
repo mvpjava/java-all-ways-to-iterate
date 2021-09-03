@@ -15,5 +15,6 @@ public class Main implements CommandLineRunner {
     public void run(String... args)  {
         WhileLoopEnumeration.loop();
         ForLoopClassic.loop();
+        ForEachLoop.loop();
     }
 }
