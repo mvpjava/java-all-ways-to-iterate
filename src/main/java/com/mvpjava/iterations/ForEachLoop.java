@@ -5,6 +5,7 @@ import java.util.List;
 
 import static java.util.List.of;
 
+// Debut in Java 5
 public class ForEachLoop {
     private static final List<String> famousDesserts;
 
@@ -20,8 +21,5 @@ public class ForEachLoop {
 
         System.out.println("================== ForEach Loop ...  with Iterable Interface /Lambda Consumer - Method Reference");
         famousDesserts.forEach(System.out::println);
-
-        System.out.println("================== ForEach Loop ...  with Iterable Interface /Lambda Consumer - Method Reference - sorted stream");
-        famousDesserts.stream().sorted().forEach(System.out::println);
     }
 }

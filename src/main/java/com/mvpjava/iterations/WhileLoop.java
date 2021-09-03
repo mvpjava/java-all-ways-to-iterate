@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 
 import static java.util.List.*;
 
-public class WhileLoopEnumeration {
+public class WhileLoop {
     private static final List <String> famousPeople ;
 
     static  {
@@ -22,17 +22,6 @@ public class WhileLoopEnumeration {
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
-
-        System.out.println("================== While loop ... Java 8 forEachRemaining - NO LOOP Necessary!!");
-        // No while loop and no methods off the iterator to call. Love it! Same thing as List.forEach though
-        famousPeople.iterator().forEachRemaining( (person) -> {
-            System.out.println(person);
-        });
-
-        // Same but with Method Reference instead of lambda Consumer code
-        System.out.println("================== While loop ... Java 8 forEachRemaining - NO LOOP Necessary!! + Method Reference");
-        famousPeople.iterator().forEachRemaining( System.out::println);
-
 
         // OR
         System.out.println("================== While loop ... List index counter");

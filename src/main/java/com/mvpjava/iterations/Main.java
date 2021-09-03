@@ -13,8 +13,10 @@ public class Main implements CommandLineRunner {
 
     @Override
     public void run(String... args)  {
-        WhileLoopEnumeration.loop();
+        WhileLoop.loop();
         ForLoopClassic.loop();
         ForEachLoop.loop();
+        StreamsForEachLoop.loop();
+        IterableForEachLoop.loop();
     }
 }
