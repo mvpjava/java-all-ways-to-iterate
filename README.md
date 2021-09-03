@@ -4,6 +4,7 @@ Lists all the ways to iterate in Java
 Debut in Java 8
 ================
  1- Stream.forEach()
+ 
  2. Iterable.forEach()
  
 Debut in Java 5
@@ -17,6 +18,7 @@ Debut in Java 2
 Since Java was Released
 =======================
  5- Class 3 part for loop (;;)
+ 
  6- while loop
 
 ======================================================
