@@ -1,0 +1,13 @@
+version: 0.0
+
+os: linux
+
+files:
+  - source: java-all-ways-to-iterate-0.0.1-SNAPSHOT.jar
+    destination: /tmp
+
+hooks:
+  ApplicationStart:
+    - location: start-process.sh
+      timeout: 180
+      runas: root
