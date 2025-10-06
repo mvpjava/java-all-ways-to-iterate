@@ -13,7 +13,7 @@ public class Main implements CommandLineRunner {
 
     @Override
     public void run(String... args)  {
-        System.out.println("Version 1.2");
+        System.out.println("Version 1.0");
         WhileLoop.loop();
         ForLoopClassic.loop();
         ForEachLoop.loop();
