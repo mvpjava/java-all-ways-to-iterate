@@ -1,19 +1,31 @@
 version: 0.2
 
 phases:
+
   install:
     runtime-versions:
       java: corretto11
+      
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
+      - java --version
+      - mvn --version
+      
+      - export GIT_COMMIT=$CODEBUILD_RESOLVED_SOURCE_VERSION
+      # strip refs/heads/ prefix to get clean branch name
+      - export GIT_BRANCH=${CODEBUILD_SOURCE_VERSION#refs/heads/}
+      - echo "Building commit $GIT_COMMIT from branch $GIT_BRANCH"
+
   build:
     commands:
-      - echo Build started on `date`
-      - mvn install
+      # mvn verify executes the following  maven phases automatically ... validate → compile → test-compile → test → package -> verify (itegration tests)
+      - mvn verify
+
   post_build:
     commands:
       - echo Build completed on `date`
+      - ls -lh target/*.jar
 
 reports:
   springboot-junit-iterations-demo-reports:
@@ -22,12 +34,14 @@ reports:
     base-directory: 'target/surefire-reports'
     discard-paths: no
     file-format: JUNITXML
+    
 artifacts:
   files:
     - target/java-all-ways-to-iterate-0.0.1-SNAPSHOT.jar
     - appspec.yml
     - start-process.sh
   discard-paths: yes
+  
 cache:
   paths:
     - '/root/.m2/**/*'
