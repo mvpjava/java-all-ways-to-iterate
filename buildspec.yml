@@ -40,6 +40,7 @@ artifacts:
     - target/java-all-ways-to-iterate-0.0.1-SNAPSHOT.jar
     - appspec.yml
     - scripts/stop-process.sh
+    - scripts/before-install.sh
     - scripts/start-process.sh
   discard-paths: yes
   

@@ -16,6 +16,22 @@ hooks:
       timeout: 60
       runas: root
 
+  # -------------------------------------------------------
+  # Runs AFTER ApplicationStop, Executes BEFORE files are copied
+  # from /opt/codedeploy-agent/deployment-root/<deployment-group-id>/<deployment-id>/deployment-archive/
+  # to the destination you specify in "files" section above (/tmp in our case)
+  #
+  # Note: AWS does the copy from S3 to /opt due to "DownloadBundle" phase (only AWS can)
+  # Use for: removing old artifact, cleaning temp files.
+  # If we remove the existing application from target directory in before-install.sh
+  # then we dont have to select option "Overwrite the content" under optional content options
+  # in aws codedeploy web console
+  # -------------------------------------------------------
+  BeforeInstall:
+    - location: before-install.sh
+      timeout: 60
+      runas: root
+
   ApplicationStart:
     - location: start-process.sh
       timeout: 180
