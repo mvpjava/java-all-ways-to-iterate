@@ -7,7 +7,16 @@ files:
     destination: /tmp
 
 hooks:
+  # -------------------------------------------------------
+  # Runs BEFORE the new revision is downloaded from artifact storage (S3 in our case)
+  # Use for: stopping old app
+  # -------------------------------------------------------
+  ApplicationStop:
+    - location: scripts/stop-process.sh
+      timeout: 60
+      runas: root
+
   ApplicationStart:
-    - location: start-process.sh
+    - location: scripts/start-process.sh
       timeout: 180
       runas: root
