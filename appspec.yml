@@ -32,7 +32,22 @@ hooks:
       timeout: 60
       runas: root
 
+  # -------------------------------------------------------
+  # Runs AFTER files are copied to destination
+  # Use for: setting permissions, moving files, config setup, read params/secrets
+  # from Secrets Manager, Parameter Store
+  #
+  # Note: AWS only will execute the "Install" phase which AWS actually perform the 
+  # copy of files from source 
+  # opt/codedeploy-agent/deployment-root/<deployment-group-id>/<deployment-id>/deployment-archive/
+  # to the destination you specify in "files" section above (/tmp in our case)
+  # -------------------------------------------------------
+  AfterInstall:
+    - location: after-install.sh
+      timeout: 60
+      runas: root
+
   ApplicationStart:
     - location: start-process.sh
-      timeout: 180
+      timeout: 60
       runas: root

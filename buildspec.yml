@@ -41,6 +41,7 @@ artifacts:
     - appspec.yml
     - scripts/stop-process.sh
     - scripts/before-install.sh
+    - scripts/after-install.sh
     - scripts/start-process.sh
   discard-paths: yes
   
