@@ -43,6 +43,8 @@ artifacts:
     - scripts/before-install.sh
     - scripts/after-install.sh
     - scripts/start-process.sh
+    - scripts/validate-service.sh
+
   discard-paths: yes
   
 cache:

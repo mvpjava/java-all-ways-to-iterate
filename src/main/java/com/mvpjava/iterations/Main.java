@@ -19,5 +19,6 @@ public class Main implements CommandLineRunner {
         ForEachLoop.loop();
         StreamsForEachLoop.loop();
         IterableForEachLoop.loop();
+        System.out.println("APPLICATION_COMPLETE_SUCCESS");
     }
 }
