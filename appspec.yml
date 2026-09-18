@@ -51,3 +51,11 @@ hooks:
     - location: start-process.sh
       timeout: 60
       runas: root
+
+  # -------------------------------------------------------
+  # Use for: health checks, verifying app started correctly
+  # -------------------------------------------------------
+  ValidateService:
+    - location: validate-service.sh
+      timeout: 120
+      runas: root
